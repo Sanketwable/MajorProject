@@ -1,0 +1,78 @@
+
+<div class="row">
+        <div >
+        <div data-ng-init="getProfile()">
+        <div class="" data-ng-init="addinit()"  data-ng-show="!refreshStop">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Update your Medical Profile</h3> 
+                </div>
+                <div class="panel-body">
+                    <form >
+                    <div class="row">
+                      <div class="col-md-6">  
+                        <div class="form-group">
+                            <label for="bsugar">Sugar (before food)</label>
+                            <input type="text" class="form-control" name="bsugar" placeholder="Enter Sugar Level (before food)" ng-model="profile.bsugar" required/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asugar">Sugar (after food)</label>
+                            <input type="text" class="form-control" name="asugar" placeholder="Enter Sugar Level (after food)" ng-model="profile.asugar" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sbp">Blood Pressure (systolic)</label>
+                            <input type="text" class="form-control" name="sbp" placeholder="Enter systolic value of BP" ng-model="profile.sbp" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dbp">Blood Pressure (diastolic)</label>
+                            <input type="text" class="form-control" name="dbp" placeholder="Enter diastolic value of BP" ng-model="profile.dbp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bmi">Body Mass Index</label>
+                            <input type="text" class="form-control" name="bmi" placeholder="Enter value of BMI" ng-model="profile.bmi" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="temp">Temperature</label>
+                            <input type="text" class="form-control" name="temp" placeholder="Enter body temperature (in Fahrenheit)" ng-model="profile.temp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pulse">Pulse</label>
+                            <input type="text" class="form-control" name="pulse" placeholder="Enter pulse rate" ng-model="profile.pulse" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resp">Respiration</label>
+                            <input type="text" class="form-control" name="resp" placeholder="Enter rate of Respiration" ng-model="profile.resp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label><br>
+                            <span>
+                                <select name="gender" ng-model="profile.gender">
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </span><br><br>                          
+                        </div>                       
+
+                        <div>                
+                            <button type="submit" class="btn btn-success" data-ng-click="updateProfile()"> Update </button>
+                            <a href="/?#!/home"><button type="button" " class="btn btn-danger"  > Cancel </button></a> 
+                            <span>{{wrongpass}}</span>
+                        </div>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>

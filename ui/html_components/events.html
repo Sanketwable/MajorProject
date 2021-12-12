@@ -1,0 +1,39 @@
+<div class = "container-fluid">
+    <h1>Your medical history : </h1>
+<div style="min-height: 400px;" data-ng-init="getAllEventsPatient()">
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>#</th>
+            <th>Disease / Problem</th>
+            <th>Duration of the disease</th>
+            <th>Medicine(s) Taken</th>
+            <th>Success</th>
+          </tr>
+        </thead>
+        <tbody data-ng-repeat="event in eventsArr; ">
+          <tr>
+              <td>{{$index + 1}}</td>
+              <td>{{ event.Event }}</td>
+              <td>{{ event.TimeSFO }}</td>
+              <td>{{ event.Medicine.join(',') }}</td>
+              <td data-ng-if = "event.Success == false || !(event.Success == true)" >
+                  <input type="text" data-ng-model="event.Success" required>
+                  <button data-ng-click="updateSuccess(event.Success, event.EventID)">Done</button>
+              </td>
+              <td data-ng-if="event.Success == true">
+                  {{event.Success}}
+              </td>
+          </tr>
+        </tbody>
+    </table>
+    <div class="add-events-style">
+        <img src="../img/add.svg" alt="" srcset="" style="height: 50px; margin-left: 40%; margin-top: 5%;"
+            data-ng-click="addEvent()"
+        >
+    </div>
+</div>
+
+  
+  </div>
+</div>
